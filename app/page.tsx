@@ -6,6 +6,8 @@ import { WhyChooseUsSection } from "@/components/why-choose-us-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 
 export default function HomePage() {
+  console.log("Webhook URL:", process.env.DISCORD_WEBHOOK_URL)
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />

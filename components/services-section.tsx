@@ -5,7 +5,12 @@ const services = [
   {
     icon: Crown,
     title: "Premium Vehicles",
-    description: "Luxury cars including Toyota Innova, Maruti Ciaz, and other high-end vehicles for your comfort.",
+    description: "Premium cars including Toyota Innova, Toyota Hycross, and other high-end vehicles for your comfort.",
+  },
+  {
+    icon: Shield,
+    title: "Dedicated Chauffeurs for Women",
+    description: "Trained Chauffeurs who ensure safety, comfort, and the utmost care for women passengers.",
   },
   {
     icon: Users,
@@ -18,11 +23,6 @@ const services = [
     description: "Always on time, every time. We value your schedule and ensure timely pickups and drop-offs.",
   },
   {
-    icon: Shield,
-    title: "Safety First",
-    description: "All vehicles are regularly maintained and sanitized. Your safety is our top priority.",
-  },
-  {
     icon: Star,
     title: "5-Star Experience",
     description: "From booking to destination, we provide a seamless luxury experience that exceeds expectations.",
@@ -30,7 +30,7 @@ const services = [
   {
     icon: MapPin,
     title: "Wide Coverage",
-    description: "Serving Delhi, Gurugram, and surrounding areas with comprehensive coverage.",
+    description: "Serving from Delhi NCR to PAN India",
   },
 ]
 

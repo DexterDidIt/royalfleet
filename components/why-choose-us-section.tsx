@@ -3,14 +3,14 @@ import Link from "next/link"
 import { Check, ArrowRight } from "lucide-react"
 
 const features = [
-  "24/7 availability for your convenience",
-  "Professional chauffeurs with years of experience",
-  "Luxury vehicles maintained to the highest standards",
-  "Competitive pricing with transparent billing",
-  "Easy booking process with instant confirmation",
-  "Comprehensive insurance coverage",
-  "Real-time tracking and updates",
-  "Personalized service tailored to your needs",
+  "Experienced local chauffeurs who know the best routes",
+  "Timely pickups and drop-offs without GPS delays",
+  "Avoid detours and traffic with route-smart drivers",
+  "Reliable navigation without dependency on maps",
+  "On-time service, even in unfamiliar areas",
+  "Drivers trained in local traffic patterns and shortcuts",
+  "Seamless travel with zero route confusion",
+  "Professional handling in all areas, known or new",
 ]
 
 export function WhyChooseUsSection() {
@@ -22,11 +22,10 @@ export function WhyChooseUsSection() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="royal-heading text-3xl sm:text-4xl lg:text-5xl text-balance">
-                Travel Like <span className="royal-gradient">Royalty</span>
+                Experienced <span className="royal-gradient">Chauffeurs</span>
               </h2>
               <p className="royal-text text-xl text-muted-foreground text-balance">
-                At Royal Fleet, we don't just provide transportation – we deliver an experience. Every journey with us
-                is crafted to make you feel like royalty.
+                Our experienced chauffeurs are highly familiar with local routes and surrounding areas, ensuring smooth, on-time pickups and drop-offs. They rely on their deep knowledge of the city — not just maps — avoiding delays caused by GPS errors or unfamiliar roads. With them, you can count on a timely and hassle-free ride every time.
               </p>
             </div>
 
@@ -63,7 +62,7 @@ export function WhyChooseUsSection() {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20">
               <img
-                src="https://static3.toyotabharat.com/images/showroom/innova-mmc/unmatched-unrivaled-banner1600x850.jpg"
+                src="https://irvingscott.com/wp-content/uploads/2023/06/chauffeur.jpg"
                 alt="Professional chauffeur with luxury vehicle"
                 className="w-full h-full object-cover"
               />

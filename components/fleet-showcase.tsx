@@ -31,7 +31,7 @@ const vehicles: Vehicle[] = [
     highlights: ["Most Popular", "Family Friendly", "Long Distance Comfort"],
     description:
       "The Toyota Innova is our flagship vehicle, perfect for family trips, group travel, and long-distance journeys. With its spacious interior and premium comfort features, it ensures a royal travel experience for up to 7 passengers.",
-    image: "/placeholder.svg?key=innova-luxury",
+    image: "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/140809/innova-crysta-exterior-right-front-three-quarter-2.png?isig=0&q=80&q=80",
     priceRange: "₹15-20/km",
     popular: true,
   },
@@ -159,20 +159,24 @@ export function FleetShowcase() {
                 {/* Popular Badge */}
                 {vehicle.popular && (
                   <div className="absolute top-4 left-4">
-                    <Badge className="bg-primary text-primary-foreground">
+
+                  <Badge className="bg-secondary text-primary">
                       <Star className="h-3 w-3 mr-1" />
                       Most Popular
                     </Badge>
                   </div>
                 )}
+                  {/* <Badge className="bg-primary text-primary-foreground"> */}
+
 
                 {/* Price Range */}
                 <div className="absolute bottom-4 right-4">
-                  <div className="bg-background/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                  {/* <div className="bg-background/90 backdrop-blur-sm px-3 py-1 rounded-full">
                     <span className="royal-text text-sm font-semibold text-foreground">{vehicle.priceRange}</span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
+  
 
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between">

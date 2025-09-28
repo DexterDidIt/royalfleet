@@ -91,7 +91,7 @@ export function ContactPage() {
                     <div className="space-y-1">
                       <h3 className="royal-heading text-lg text-foreground">Phone</h3>
                       <p className="royal-text text-muted-foreground">Call us anytime, 24/7 support</p>
-                      <p className="royal-text text-foreground font-semibold">+91 98765 43210</p>
+                      <p className="royal-text text-foreground font-semibold">+91 9911256736</p>
                     </div>
                   </div>
                 </CardContent>

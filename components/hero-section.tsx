@@ -27,8 +27,7 @@ export function HeroSection() {
               Experience <span className="royal-gradient">Royal</span> Travel
             </h1>
             <p className="royal-text text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto text-balance">
-              Premium chauffeur services with luxury vehicles for the most discerning travelers. Your journey begins
-              with excellence.
+              Chauffeur services with premium vehicles for the most discerning travelers. Special chauffeur team for women, with care.
             </p>
           </div>
 
@@ -57,7 +56,7 @@ export function HeroSection() {
           {/* Trust indicators */}
           <div className="pt-8 space-y-4">
             <p className="royal-text text-sm text-muted-foreground">
-              Trusted by premium travelers across Delhi & Gurugram
+              Trusted by premium travelers across India
             </p>
             <div className="flex flex-wrap justify-center items-center gap-8 text-muted-foreground">
               <div className="flex items-center space-x-2">
@@ -71,7 +70,7 @@ export function HeroSection() {
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-primary rounded-full" />
-                <span className="royal-text text-sm">Luxury Fleet</span>
+                <span className="royal-text text-sm">Premium Fleet</span>
               </div>
             </div>
           </div>
