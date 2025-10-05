@@ -20,6 +20,102 @@ interface Vehicle {
   popular?: boolean
 }
 
+// const vehicles: Vehicle[] = [
+//   {
+//     id: "innova",
+//     name: "Toyota Innova",
+//     type: "Premium SUV",
+//     capacity: "6+1 Seater",
+//     fuelType: "Diesel",
+//     features: ["Premium AC", "GPS Navigation", "Professional Chauffeur", "Spacious Interior", "Luggage Space"],
+//     highlights: ["Most Popular", "Family Friendly", "Long Distance Comfort"],
+//     description:
+//       "The Toyota Innova is our flagship vehicle, perfect for family trips, group travel, and long-distance journeys. With its spacious interior and premium comfort features, it ensures a royal travel experience for up to 7 passengers.",
+//     image: "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/140809/innova-crysta-exterior-right-front-three-quarter-2.png?isig=0&q=80&q=80",
+//     priceRange: "₹15-20/km",
+//     popular: true,
+//   },
+//   {
+//     id: "ciaz",
+//     name: "Maruti Ciaz",
+//     type: "Executive Sedan",
+//     capacity: "4+1 Seater",
+//     fuelType: "Petrol",
+//     features: ["Premium AC", "GPS Navigation", "Professional Chauffeur", "Fuel Efficient", "Executive Comfort"],
+//     highlights: ["Business Travel", "Fuel Efficient", "Executive Choice"],
+//     description:
+//       "The Maruti Ciaz is ideal for business travel and executive transportation. Its elegant design and fuel efficiency make it perfect for city travel and corporate meetings, ensuring you arrive in style.",
+//     image: "/placeholder.svg?key=ciaz-executive",
+//     priceRange: "₹12-16/km",
+//   },
+//   {
+//     id: "ertiga",
+//     name: "Maruti Ertiga",
+//     type: "Compact SUV",
+//     capacity: "6+1 Seater",
+//     fuelType: "Petrol",
+//     features: ["Premium AC", "GPS Navigation", "Professional Chauffeur", "Comfortable Seating", "Good Mileage"],
+//     highlights: ["Value for Money", "Compact Size", "City Friendly"],
+//     description:
+//       "The Maruti Ertiga offers the perfect balance of space and efficiency. Ideal for medium-sized groups and city travel, it provides comfortable seating for up to 7 passengers while maintaining excellent fuel economy.",
+//     image: "/placeholder.svg?key=ertiga-compact",
+//     priceRange: "₹10-14/km",
+//   },
+//   {
+//     id: "swift-dzire",
+//     name: "Swift Dzire",
+//     type: "Premium Sedan",
+//     capacity: "4+1 Seater",
+//     fuelType: "Petrol",
+//     features: ["Premium AC", "GPS Navigation", "Professional Chauffeur", "Compact Design", "City Optimized"],
+//     highlights: ["Airport Transfers", "Quick Trips", "Economic Choice"],
+//     description:
+//       "The Swift Dzire is perfect for quick city trips, airport transfers, and solo or couple travel. Its compact design makes it ideal for navigating through city traffic while providing comfort and style.",
+//     image: "/placeholder.svg?key=dzire-premium",
+//     priceRange: "₹8-12/km",
+//   },
+//   {
+//     id: "tempo-traveller",
+//     name: "Tempo Traveller",
+//     type: "Luxury Van",
+//     capacity: "12+1 Seater",
+//     fuelType: "Diesel",
+//     features: [
+//       "Premium AC",
+//       "GPS Navigation",
+//       "Professional Chauffeur",
+//       "Push Back Seats",
+//       "Entertainment System",
+//       "Extra Luggage Space",
+//     ],
+//     highlights: ["Group Travel", "Event Transportation", "Maximum Comfort"],
+//     description:
+//       "The Tempo Traveller is our premium choice for large groups and special events. With luxury seating for up to 12 passengers, entertainment systems, and ample luggage space, it's perfect for weddings, corporate events, and group tours.",
+//     image: "/placeholder.svg?key=tempo-luxury",
+//     priceRange: "₹25-35/km",
+//   },
+//   {
+//     id: "fortuner",
+//     name: "Toyota Fortuner",
+//     type: "Luxury SUV",
+//     capacity: "6+1 Seater",
+//     fuelType: "Diesel",
+//     features: [
+//       "Premium AC",
+//       "GPS Navigation",
+//       "Professional Chauffeur",
+//       "Leather Interiors",
+//       "Advanced Safety",
+//       "Premium Sound System",
+//     ],
+//     highlights: ["Ultra Luxury", "VIP Choice", "Premium Experience"],
+//     description:
+//       "The Toyota Fortuner represents the pinnacle of luxury in our fleet. With its commanding presence, leather interiors, and advanced features, it's the preferred choice for VIP travel and special occasions.",
+//     image: "/placeholder.svg?key=fortuner-vip",
+//     priceRange: "₹30-40/km",
+//   },
+// ]
+
 const vehicles: Vehicle[] = [
   {
     id: "innova",
@@ -36,6 +132,19 @@ const vehicles: Vehicle[] = [
     popular: true,
   },
   {
+    id: "hycross",
+    name: "Toyota Innova Hycross",
+    type: "Hybrid SUV",
+    capacity: "6+1 Seater",
+    fuelType: "Hybrid (Petrol + Electric)",
+    features: ["Premium AC", "GPS Navigation", "Professional Chauffeur", "Modern Interiors", "Fuel Efficient Hybrid"],
+    highlights: ["Eco-Friendly", "Comfortable Ride", "Premium Hybrid SUV"],
+    description:
+      "The Toyota Innova Hycross brings innovation to premium travel with hybrid technology, offering both fuel efficiency and comfort. Perfect for family journeys and corporate travel with a touch of modern luxury.",
+    image: "/fleet-images/hycross.png",
+    priceRange: "₹18-24/km",
+  },
+  {
     id: "ciaz",
     name: "Maruti Ciaz",
     type: "Executive Sedan",
@@ -45,21 +154,21 @@ const vehicles: Vehicle[] = [
     highlights: ["Business Travel", "Fuel Efficient", "Executive Choice"],
     description:
       "The Maruti Ciaz is ideal for business travel and executive transportation. Its elegant design and fuel efficiency make it perfect for city travel and corporate meetings, ensuring you arrive in style.",
-    image: "/placeholder.svg?key=ciaz-executive",
+    image: "/fleet-images/city.avif",
     priceRange: "₹12-16/km",
   },
   {
-    id: "ertiga",
-    name: "Maruti Ertiga",
-    type: "Compact SUV",
-    capacity: "6+1 Seater",
+    id: "city",
+    name: "Honda City",
+    type: "Luxury Sedan",
+    capacity: "4+1 Seater",
     fuelType: "Petrol",
-    features: ["Premium AC", "GPS Navigation", "Professional Chauffeur", "Comfortable Seating", "Good Mileage"],
-    highlights: ["Value for Money", "Compact Size", "City Friendly"],
+    features: ["Premium AC", "GPS Navigation", "Professional Chauffeur", "Luxury Interiors", "Smooth Ride"],
+    highlights: ["Premium Comfort", "Executive Travel", "Stylish Choice"],
     description:
-      "The Maruti Ertiga offers the perfect balance of space and efficiency. Ideal for medium-sized groups and city travel, it provides comfortable seating for up to 7 passengers while maintaining excellent fuel economy.",
-    image: "/placeholder.svg?key=ertiga-compact",
-    priceRange: "₹10-14/km",
+      "The Honda City is a premium sedan that combines elegance and performance. It is perfect for business executives and family travel alike, offering a smooth, stylish, and comfortable ride every time.",
+    image: "/fleet-images/city.jpg",
+    priceRange: "₹14-18/km",
   },
   {
     id: "swift-dzire",
@@ -71,50 +180,11 @@ const vehicles: Vehicle[] = [
     highlights: ["Airport Transfers", "Quick Trips", "Economic Choice"],
     description:
       "The Swift Dzire is perfect for quick city trips, airport transfers, and solo or couple travel. Its compact design makes it ideal for navigating through city traffic while providing comfort and style.",
-    image: "/placeholder.svg?key=dzire-premium",
+    image: "/fleet-images/dzire.jpg",
     priceRange: "₹8-12/km",
   },
-  {
-    id: "tempo-traveller",
-    name: "Tempo Traveller",
-    type: "Luxury Van",
-    capacity: "12+1 Seater",
-    fuelType: "Diesel",
-    features: [
-      "Premium AC",
-      "GPS Navigation",
-      "Professional Chauffeur",
-      "Push Back Seats",
-      "Entertainment System",
-      "Extra Luggage Space",
-    ],
-    highlights: ["Group Travel", "Event Transportation", "Maximum Comfort"],
-    description:
-      "The Tempo Traveller is our premium choice for large groups and special events. With luxury seating for up to 12 passengers, entertainment systems, and ample luggage space, it's perfect for weddings, corporate events, and group tours.",
-    image: "/placeholder.svg?key=tempo-luxury",
-    priceRange: "₹25-35/km",
-  },
-  {
-    id: "fortuner",
-    name: "Toyota Fortuner",
-    type: "Luxury SUV",
-    capacity: "6+1 Seater",
-    fuelType: "Diesel",
-    features: [
-      "Premium AC",
-      "GPS Navigation",
-      "Professional Chauffeur",
-      "Leather Interiors",
-      "Advanced Safety",
-      "Premium Sound System",
-    ],
-    highlights: ["Ultra Luxury", "VIP Choice", "Premium Experience"],
-    description:
-      "The Toyota Fortuner represents the pinnacle of luxury in our fleet. With its commanding presence, leather interiors, and advanced features, it's the preferred choice for VIP travel and special occasions.",
-    image: "/placeholder.svg?key=fortuner-vip",
-    priceRange: "₹30-40/km",
-  },
-]
+];
+
 
 export function FleetShowcase() {
   return (
@@ -122,11 +192,13 @@ export function FleetShowcase() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center space-y-4 mb-12">
-          <div className="flex justify-center">
+
+          {/* Logo commented Below  */}
+          {/* <div className="flex justify-center">
             <div className="p-3 rounded-full bg-primary/10 border border-primary/20">
               <Crown className="h-8 w-8 text-primary" />
             </div>
-          </div>
+          </div> */}
           <h1 className="royal-heading text-3xl sm:text-4xl lg:text-5xl text-balance">
             Our <span className="royal-gradient">Royal</span> Fleet
           </h1>
@@ -160,13 +232,14 @@ export function FleetShowcase() {
                 {vehicle.popular && (
                   <div className="absolute top-4 left-4">
 
-                  <Badge className="bg-secondary text-primary">
+                  <Badge className="bg-primary text-primary-foreground">
                       <Star className="h-3 w-3 mr-1" />
                       Most Popular
                     </Badge>
                   </div>
                 )}
                   {/* <Badge className="bg-primary text-primary-foreground"> */}
+                  {/* <Badge className="bg-secondary text-primary"></Badge> */}
 
 
                 {/* Price Range */}

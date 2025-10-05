@@ -21,7 +21,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Crown className="h-8 w-8 text-primary" />
+            {/* <Crown className="h-8 w-8 text-primary" /> */}
             <span className="royal-heading text-xl text-primary">Royal Fleet</span>
           </Link>
 

@@ -39,11 +39,11 @@ export function AboutPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
-          <div className="flex justify-center">
+          {/* <div className="flex justify-center">
             <div className="p-3 rounded-full bg-primary/10 border border-primary/20">
               <Crown className="h-8 w-8 text-primary" />
             </div>
-          </div>
+          </div> */}
           <h1 className="royal-heading text-3xl sm:text-4xl lg:text-5xl text-balance">
             About <span className="royal-gradient">Royal Fleet</span>
           </h1>
@@ -80,7 +80,7 @@ export function AboutPage() {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20">
               <img
-                src="/placeholder.svg?key=about-royal-fleet"
+                src="https://mir-s3-cdn-cf.behance.net/projects/404/28c4ef220914597.Y3JvcCwxNzAxLDEzMzEsMTQ3LDA.jpg"
                 alt="Royal Fleet luxury service"
                 className="w-full h-full object-cover"
               />
