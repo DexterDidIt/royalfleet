@@ -17,6 +17,7 @@ export interface BookingData {
   time: string
   name: string
   mobile: string
+  email: string
   selectedCar: string
   requestCallback: boolean
 }
@@ -37,6 +38,7 @@ export function BookingFlow() {
     time: "",
     name: "",
     mobile: "",
+    email: "",
     selectedCar: "",
     requestCallback: false,
   })

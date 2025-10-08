@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { ArrowRight, ArrowLeft, User, Phone } from "lucide-react"
+import { ArrowRight, ArrowLeft, User, Phone, Mail } from "lucide-react"
 import type { BookingData } from "@/components/booking-flow"
 
 interface PassengerDetailsStepProps {
@@ -20,9 +20,19 @@ export function PassengerDetailsStep({ data, updateData, onNext, onPrev }: Passe
   const validateAndNext = () => {
     const newErrors: Record<string, string> = {}
 
+    //name validation
     if (!data.name.trim()) {
       newErrors.name = "Name is required"
     }
+
+    // Email validation
+  if (!data.email.trim()) {
+    newErrors.email = "Email is required"
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+    newErrors.email = "Please enter a valid email address"
+  }
+
+   // Mobile validation
     if (!data.mobile.trim()) {
       newErrors.mobile = "Mobile number is required"
     } else if (!/^[6-9]\d{9}$/.test(data.mobile.replace(/\D/g, ""))) {
@@ -96,6 +106,23 @@ export function PassengerDetailsStep({ data, updateData, onNext, onPrev }: Passe
           </div>
           {errors.mobile && <p className="text-sm text-destructive">{errors.mobile}</p>}
         </div>
+
+        {/* Email */}
+        <div className="space-y-2">
+          <Label htmlFor="name" className="royal-text font-medium flex items-center space-x-2">
+            <Mail className="h-4 w-4 text-primary" />
+            <span>Email</span>
+          </Label>
+          <Input
+            id="email"
+            placeholder="Enter your email"
+            value={data.email}
+            onChange={(e) => updateData({ email: e.target.value })}
+            className={`royal-text ${errors.email ? "border-destructive" : ""}`}
+          />
+          {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
+        </div>
+
 
         {/* Request Callback Option */}
         <div className="p-4 bg-muted/50 rounded-lg border border-border">
