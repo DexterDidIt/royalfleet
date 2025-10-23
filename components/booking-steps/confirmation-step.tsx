@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowLeft, MapPin, User, Car, Crown, CheckCircle } from "lucide-react"
+import { ArrowLeft, MapPin, User, Car, Crown, CheckCircle, DollarSign, IndianRupee } from "lucide-react"
 import type { BookingData } from "@/components/booking-flow"
 import { submitBooking } from "@/lib/discord-utils"
 
@@ -30,7 +30,13 @@ export function ConfirmationStep({ data, onPrev }: ConfirmationStepProps) {
         email: data.email || "",
         phone: data.mobile,
         selectedCar: getCarName(data.selectedCar),
-        passengers: "1",
+        // passengers: "1",
+        noOfPassengers: data.noOfPassengers,
+        priceOption: data.priceOption,
+        extraKms: data.extraKms,
+        extraHours: data.extraHours,
+        totalPrice: data.totalPrice,
+        bookingForWomen: data.bookingForWomen,
         specialRequests: data.requestCallback ? "Callback requested" : "",
       }
 
@@ -65,10 +71,10 @@ export function ConfirmationStep({ data, onPrev }: ConfirmationStepProps) {
         <div className="space-y-4">
           <Card className="bg-card border-border">
             <CardContent className="p-4">
-              <div className="flex items-center justify-center space-x-2">
+              {/* <div className="flex items-center justify-center space-x-2">
                 <Crown className="h-5 w-5 text-primary" />
                 <span className="royal-text text-sm text-foreground">Thank you for choosing Royal Fleet</span>
-              </div>
+              </div> */}
             </CardContent>
           </Card>
 
@@ -180,7 +186,36 @@ export function ConfirmationStep({ data, onPrev }: ConfirmationStepProps) {
             <p className="royal-text text-foreground">{getCarName(data.selectedCar)}</p>
           </CardContent>
         </Card>
+
+        {/* Fare Details */}
+        <Card className="bg-card border-border">
+          <CardHeader className="pb-3">
+            <CardTitle className="royal-heading text-base flex items-center space-x-2">
+              <IndianRupee className="h-4 w-4 text-primary" />
+              <span>Selected Fare</span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="mb-2.5">
+              <p className="royal-text text-sm text-muted-foreground">Base</p>
+            <p className="royal-text text-foreground">{data.priceOption}</p>
+            </div>
+            <div className="mb-2.5">
+            <p className="royal-text text-sm text-muted-foreground">Extra kms</p>
+            <p className="royal-text text-foreground">{data.extraKms}</p>
+            </div>
+            <div className="mb-2.5">
+            <p className="royal-text text-sm text-muted-foreground">Extra Hours</p>
+            <p className="royal-text text-foreground">{data.extraHours}</p>
+            </div>
+            <div className="mb-2.5">
+            <p className="royal-text text-sm text-muted-foreground">Total Fare</p>
+            <p className="royal-text text-foreground"><IndianRupee className="h-4 w-4 text-primary inline" />{data.totalPrice}</p>
+            </div>
+          </CardContent>
+        </Card>
       </div>
+      
 
       <div className="flex flex-col sm:flex-row gap-3 pt-4">
         <Button
@@ -205,7 +240,7 @@ export function ConfirmationStep({ data, onPrev }: ConfirmationStepProps) {
             </div>
           ) : (
             <div className="flex items-center space-x-2">
-              <Crown className="h-5 w-5" />
+              {/* <Crown className="h-5 w-5" /> */}
               <span>Confirm Royal Booking</span>
             </div>
           )}

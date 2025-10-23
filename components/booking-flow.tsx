@@ -9,6 +9,7 @@ import { PassengerDetailsStep } from "@/components/booking-steps/passenger-detai
 import { CarSelectionStep } from "@/components/booking-steps/car-selection-step"
 import { ConfirmationStep } from "@/components/booking-steps/confirmation-step"
 import { Button } from "@/components/ui/button"
+import { PriceStep } from "./booking-steps/pricing_step"
 
 export interface BookingData {
   pickupLocation: string
@@ -20,13 +21,20 @@ export interface BookingData {
   email: string
   selectedCar: string
   requestCallback: boolean
+  priceOption?: string
+  totalPrice?: number
+  extraKms?: number
+  extraHours?: number
+  noOfPassengers?: number
+  bookingForWomen?: boolean
 }
 
 const steps = [
   { id: 1, title: "Trip Details", description: "Where and when" },
   { id: 2, title: "Passenger Info", description: "Your details" },
   { id: 3, title: "Select Vehicle", description: "Choose your ride" },
-  { id: 4, title: "Confirmation", description: "Review & book" },
+  { id: 4, title: "Select Fare", description: "Pick your price option" },
+  { id: 5, title: "Confirmation", description: "Review & book" },
 ]
 
 export function BookingFlow() {
@@ -41,6 +49,12 @@ export function BookingFlow() {
     email: "",
     selectedCar: "",
     requestCallback: false,
+    priceOption: "",
+    totalPrice: 0,
+    extraKms: 0,
+    extraHours: 0,
+    noOfPassengers: 1,
+    bookingForWomen: false
   })
 
   const updateBookingData = (data: Partial<BookingData>) => {
@@ -48,7 +62,7 @@ export function BookingFlow() {
   }
 
   const nextStep = () => {
-    if (currentStep < 4) {
+    if (currentStep < 5) {
       setCurrentStep(currentStep + 1)
     }
   }
@@ -74,6 +88,10 @@ export function BookingFlow() {
           <CarSelectionStep data={bookingData} updateData={updateBookingData} onNext={nextStep} onPrev={prevStep} />
         )
       case 4:
+        return (
+          <PriceStep data={bookingData} updateData={updateBookingData} onNext={nextStep} onPrev={prevStep} />
+        )
+      case 5:
         return <ConfirmationStep data={bookingData} onPrev={prevStep} />
       default:
         return (
@@ -101,11 +119,11 @@ export function BookingFlow() {
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center space-y-4 mb-8">
-          <div className="flex justify-center">
+          {/* <div className="flex justify-center">
             <div className="p-3 rounded-full bg-primary/10 border border-primary/20">
               <Crown className="h-8 w-8 text-primary" />
             </div>
-          </div>
+          </div> */}
           <h1 className="royal-heading text-3xl sm:text-4xl text-balance">
             Book Your <span className="royal-gradient">Royal</span> Ride
           </h1>

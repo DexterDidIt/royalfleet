@@ -48,11 +48,23 @@ export function TripDetailsStep({ data, updateData, onNext }: TripDetailsStepPro
     }
   }
 
+  // const getMinDate = () => {
+  //   const tomorrow = new Date()
+  //   tomorrow.setDate(tomorrow.getDate() + 1)
+  //   return tomorrow.toISOString().split("T")[0]
+  // }
+
   const getMinDate = () => {
-    const tomorrow = new Date()
-    tomorrow.setDate(tomorrow.getDate() + 1)
-    return tomorrow.toISOString().split("T")[0]
-  }
+  const tomorrow = new Date()
+  tomorrow.setDate(tomorrow.getDate() + 1)
+
+  const year = tomorrow.getFullYear()
+  const month = String(tomorrow.getMonth() + 1).padStart(2, "0")
+  const day = String(tomorrow.getDate()).padStart(2, "0")
+
+  return `${year}-${month}-${day}`
+}
+
 
   return (
     <div className="space-y-6">
@@ -90,7 +102,7 @@ export function TripDetailsStep({ data, updateData, onNext }: TripDetailsStepPro
         </div>
 
         {/* Date and Time */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-2">
             <Label htmlFor="date" className="royal-text font-medium flex items-center space-x-2">
               <Calendar className="h-4 w-4 text-primary" />
@@ -121,7 +133,68 @@ export function TripDetailsStep({ data, updateData, onNext }: TripDetailsStepPro
             />
             {errors.time && <p className="text-sm text-destructive">{errors.time}</p>}
           </div>
-        </div>
+        </div> */}
+        {/* Date */}
+<div className="space-y-2 relative">
+  <Label htmlFor="date" className="royal-text font-medium flex items-center space-x-2">
+    <Calendar className="h-4 w-4 text-primary" />
+    <span>Date</span>
+  </Label>
+  <div className="relative">
+  <Input
+    id="date"
+    type="date"
+    min={getMinDate()}
+    value={data.date}
+    onChange={(e) => updateData({ date: e.target.value })}
+    className={`royal-text pr-10 ${errors.date ? "border-destructive" : ""}`}
+  />
+  <Calendar
+    className="h-5 w-5 text-yellow-400 absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+    onClick={() => {
+      const input = document.getElementById("date") as HTMLInputElement | null
+      if (input && input.showPicker) {
+        input.showPicker()
+      } else {
+        input?.focus()
+      }
+    }}
+  />
+</div>
+
+
+  {errors.date && <p className="text-sm text-destructive">{errors.date}</p>}
+</div>
+
+{/* Time */}
+<div className="space-y-2 relative">
+  <Label htmlFor="time" className="royal-text font-medium flex items-center space-x-2">
+    <Clock className="h-4 w-4 text-primary" />
+    <span>Time</span>
+  </Label>
+ <div className="relative">
+  <Input
+    id="time"
+    type="time"
+    value={data.time}
+    onChange={(e) => updateData({ time: e.target.value })}
+    className={`royal-text pr-10 ${errors.time ? "border-destructive" : ""}`}
+  />
+  <Clock
+    className="h-5 w-5 text-yellow-400 absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+    onClick={() => {
+      const input = document.getElementById("time") as HTMLInputElement | null
+      if (input && input.showPicker) {
+        input.showPicker() // For browsers that support it
+      } else {
+        input?.focus() // Fallback to focus (works on Chrome)
+      }
+    }}
+  />
+</div>
+
+  {errors.time && <p className="text-sm text-destructive">{errors.time}</p>}
+</div>
       </div>
 
       <div className="pt-4">

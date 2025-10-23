@@ -176,14 +176,19 @@ export async function POST(request: NextRequest) {
             },
             {
               name: "👤 Passenger Information",
-              value: `**Name:** ${data.firstName} ${data.lastName}\n**Email:** ${data.email}\n**Phone:** ${data.phone}`,
+              value: `**Name:** ${data.firstName} ${data.lastName}\n**Email:** ${data.email}\n**Phone:** ${data.phone}\n**Booking for Women?:** ${data.bookingForWomen}`,
               inline: true,
             },
             {
               name: "🚙 Vehicle Selection",
               value: `**Car:** ${data.selectedCar}\n**Passengers:** ${
-                data.passengers || "Not specified"
+                data.noOfPassengers || "Not specified"
               }\n**Special Requests:** ${data.specialRequests || "None"}`,
+              inline: true,
+            },
+            {
+              name: "💰 Selected Fare",
+              value: `**Fare:** ${data.priceOption}\n**Extra kms:** ${data.extraKms}\n**Extra Hours:** ${data.extraHours}\n**TOTAL:** Rs. ${data.totalPrice}`,
               inline: true,
             },
           ],

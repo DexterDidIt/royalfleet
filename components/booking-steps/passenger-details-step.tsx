@@ -20,23 +20,28 @@ export function PassengerDetailsStep({ data, updateData, onNext, onPrev }: Passe
   const validateAndNext = () => {
     const newErrors: Record<string, string> = {}
 
-    //name validation
+    // name validation
     if (!data.name.trim()) {
       newErrors.name = "Name is required"
     }
 
     // Email validation
-  if (!data.email.trim()) {
-    newErrors.email = "Email is required"
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-    newErrors.email = "Please enter a valid email address"
-  }
+    if (!data.email.trim()) {
+      newErrors.email = "Email is required"
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      newErrors.email = "Please enter a valid email address"
+    }
 
-   // Mobile validation
+    // Mobile validation
     if (!data.mobile.trim()) {
       newErrors.mobile = "Mobile number is required"
     } else if (!/^[6-9]\d{9}$/.test(data.mobile.replace(/\D/g, ""))) {
       newErrors.mobile = "Please enter a valid 10-digit mobile number"
+    }
+
+    // Number of passengers validation
+    if (!data.noOfPassengers || data.noOfPassengers < 1) {
+      newErrors.noOfPassengers = "Please enter number of passengers"
     }
 
     setErrors(newErrors)
@@ -57,7 +62,6 @@ export function PassengerDetailsStep({ data, updateData, onNext, onPrev }: Passe
     }
 
     updateData({ requestCallback: true })
-    // Here you would typically send the callback request
     alert("Callback requested! We'll call you shortly.")
   }
 
@@ -109,7 +113,7 @@ export function PassengerDetailsStep({ data, updateData, onNext, onPrev }: Passe
 
         {/* Email */}
         <div className="space-y-2">
-          <Label htmlFor="name" className="royal-text font-medium flex items-center space-x-2">
+          <Label htmlFor="email" className="royal-text font-medium flex items-center space-x-2">
             <Mail className="h-4 w-4 text-primary" />
             <span>Email</span>
           </Label>
@@ -123,9 +127,41 @@ export function PassengerDetailsStep({ data, updateData, onNext, onPrev }: Passe
           {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
         </div>
 
+        {/* Number of Passengers */}
+        <div className="space-y-2">
+          <Label htmlFor="noOfPassengers" className="royal-text font-medium">
+            Number of Passengers
+          </Label>
+          <Input
+            type="number"
+            id="noOfPassengers"
+            placeholder="Enter number of passengers"
+            min={1}
+            value={data.noOfPassengers || ""}
+            onChange={(e) => updateData({ noOfPassengers: Number(e.target.value) })}
+            className={`royal-text ${errors.noOfPassengers ? "border-destructive" : ""}`}
+          />
+          {errors.noOfPassengers && <p className="text-sm text-destructive">{errors.noOfPassengers}</p>}
+        </div>
+
+        {/* Booking for Women? */}
+        <div className="space-y-2">
+          <Label htmlFor="bookingForWomen" className="royal-text font-medium">
+            Booking for Women?
+          </Label>
+          <select
+            id="bookingForWomen"
+            className="royal-text border rounded-md p-2 w-full"
+            value={data.bookingForWomen ? "yes" : "no"}
+            onChange={(e) => updateData({ bookingForWomen: e.target.value === "yes" })}
+          >
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </div>
 
         {/* Request Callback Option */}
-        <div className="p-4 bg-muted/50 rounded-lg border border-border">
+        {/* <div className="p-4 bg-muted/50 rounded-lg border border-border">
           <div className="space-y-3">
             <h3 className="royal-heading text-lg text-foreground">Need Assistance?</h3>
             <p className="royal-text text-sm text-muted-foreground">
@@ -140,7 +176,7 @@ export function PassengerDetailsStep({ data, updateData, onNext, onPrev }: Passe
               Request Callback
             </Button>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="flex flex-col sm:flex-row gap-3 pt-4">
