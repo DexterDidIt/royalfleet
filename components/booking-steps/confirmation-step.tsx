@@ -229,7 +229,7 @@ export function ConfirmationStep({ data, onPrev }: ConfirmationStepProps) {
         </Button>
         <Button
           onClick={handleSubmit}
-          className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
+          className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground py-3 sm:py-3"
           size="lg"
           disabled={isSubmitting}
         >

@@ -64,12 +64,16 @@ export function BookingFlow() {
   const nextStep = () => {
     if (currentStep < 5) {
       setCurrentStep(currentStep + 1)
+      // Scroll to top smoothly
+    window.scrollTo({ top: 30, behavior: "smooth" })
     }
   }
 
   const prevStep = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1)
+      // Scroll to top smoothly
+    window.scrollTo({ top: 30, behavior: "smooth" })
     }
   }
 
