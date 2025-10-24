@@ -6,11 +6,11 @@ export function PrivacyPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center space-y-4 mb-12">
-          <div className="flex justify-center">
+          {/* <div className="flex justify-center">
             <div className="p-3 rounded-full bg-primary/10 border border-primary/20">
               <Crown className="h-8 w-8 text-primary" />
             </div>
-          </div>
+          </div> */}
           <h1 className="royal-heading text-3xl sm:text-4xl lg:text-5xl text-balance">
             Privacy <span className="royal-gradient">Policy</span>
           </h1>
@@ -122,8 +122,8 @@ export function PrivacyPage() {
               <h2 className="royal-heading text-2xl text-foreground">11. Contact Us</h2>
               <div className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>If you have questions about this privacy policy:</p>
-                <p>• Phone: +91 98765 43210</p>
-                <p>• Email: privacy@royalfleet.com</p>
+                <p>• Phone: +91 9911256736</p>
+                <p>• Email: info@royalfleet.in</p>
                 <p>• Address: Delhi, Gurugram & NCR</p>
               </div>
             </section>

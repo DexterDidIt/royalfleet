@@ -6,11 +6,11 @@ export function TermsPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center space-y-4 mb-12">
-          <div className="flex justify-center">
+          {/* <div className="flex justify-center">
             <div className="p-3 rounded-full bg-primary/10 border border-primary/20">
               <Crown className="h-8 w-8 text-primary" />
             </div>
-          </div>
+          </div> */}
           <h1 className="royal-heading text-3xl sm:text-4xl lg:text-5xl text-balance">
             Terms & <span className="royal-gradient">Services</span>
           </h1>
@@ -106,8 +106,8 @@ export function TermsPage() {
               <h2 className="royal-heading text-2xl text-foreground">10. Contact Information</h2>
               <div className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>For questions about these terms:</p>
-                <p>• Phone: +91 98765 43210</p>
-                <p>• Email: info@royalfleet.com</p>
+                <p>• Phone: +91 9911256736</p>
+                <p>• Email: info@royalfleet.in</p>
                 <p>• Service Area: Delhi, Gurugram & NCR</p>
               </div>
             </section>

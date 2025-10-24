@@ -5,6 +5,28 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { Crown, Users, Fuel, Shield, Star, ArrowRight } from "lucide-react"
+import {Metadata} from "next"
+
+export const metadata: Metadata = {
+  title: "Our Fleet - Royal Fleet",
+  description: "Choose from our collection of premium vehicles, each maintained to the highest standards and driven by professional chauffeurs.",
+   openGraph: {
+    title: "Our Royal Fleet",
+    description: "Choose from our collection of premium vehicles",
+    url: "https://royalfleet.in/fleet",
+    siteName: "Royal Fleet",
+    // images: [
+    //   {
+    //     url: "https://mir-s3-cdn-cf.behance.net/projects/404/28c4ef220914597.Y3JvcCwxNzAxLDEzMzEsMTQ3LDA.jpg",
+    //     width: 1200,
+    //     height: 630,
+    //     alt: "Royal Fleet About us",
+    //   },
+    // ],
+    locale: "en_IN",
+    type: "website",
+  },
+}
 
 interface Vehicle {
   id: string

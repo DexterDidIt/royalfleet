@@ -10,6 +10,28 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Crown, Phone, Mail, MapPin, Clock, Send } from "lucide-react"
 import { submitContactForm } from "@/lib/discord-utils"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Contact Us - Royal Fleet",
+  description: "Get in touch with our team for bookings, inquiries, or personalized travel solutions. We're here to serve you 24/7.",
+   openGraph: {
+    title: "Contact Royal Fleet",
+    description: "Reach out for royal travel assistance or bookings.",
+    url: "https://royalfleet.in/contact",
+    siteName: "Royal Fleet",
+    // images: [
+    //   {
+    //     url: "https://royalfleet.in/og-image.jpg",
+    //     width: 1200,
+    //     height: 630,
+    //     alt: "Royal Fleet Luxury Cars",
+    //   },
+    // ],
+    locale: "en_IN",
+    type: "website",
+  },
+}
 
 export function ContactPage() {
   const [formData, setFormData] = useState({

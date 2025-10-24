@@ -2,6 +2,29 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Crown, Shield, Users, Star, Award, Clock, ArrowRight } from "lucide-react"
+import {Metadata} from "next"
+
+
+export const metadata: Metadata = {
+  title: "About Us - Royal Fleet",
+  description: "Redefining travel with premium chauffeur services in Delhi and Gurgram",
+   openGraph: {
+    title: "About Royal Fleet",
+    description: "Travel with premium chauffeur services in Delhi and Gurugram",
+    url: "https://royalfleet.in/about",
+    siteName: "Royal Fleet",
+    images: [
+      {
+        url: "https://mir-s3-cdn-cf.behance.net/projects/404/28c4ef220914597.Y3JvcCwxNzAxLDEzMzEsMTQ3LDA.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Royal Fleet About us",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+}
 
 const values = [
   {
